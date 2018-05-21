@@ -4,13 +4,15 @@ Dette er mitt bidrag til intervjucase
 Case – TSA
  
 Lag en applikasjon som tar et bilde med mobilens kamera og viser bildet i appen.
-·         Velg selv teknologi/rammeverk/plattform. Tenk at valget du tar skal kunne benyttes i en produksjonsapp hos Politiet. Tenk gjennom hvorfor du velger som du gjør.
-·         Forsøk å lage ryddig og oversiktlig kode som følger best practices for valgt programmeringsspråk
-·         Bruk rimelig tid på oppgaven, og forklar heller hva du ville gjort videre med mer tid i intervjuet
+
+•	Velg selv teknologi/rammeverk/plattform. Tenk at valget du tar skal kunne benyttes i en produksjonsapp hos Politiet. Tenk gjennom hvorfor du velger som du gjør.
+•	Forsøk å lage ryddig og oversiktlig kode som følger best practices for valgt programmeringsspråk
+•	Bruk rimelig tid på oppgaven, og forklar heller hva du ville gjort videre med mer tid i intervjuet
  
 Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis alle i appen som thumbnails, i en liste el.
 
 
+# Løsning
 Jeg valgte å løse dette i Kotlin kjørende på native Android.
 Grunnen til at jeg valgte å løse det i native Android er at oppgaven innebærer å jobbe med hardware på mobilen, kameraet. 
 
