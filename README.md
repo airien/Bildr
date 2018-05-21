@@ -17,7 +17,7 @@ Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis al
 
 # Løsning
  
-![alt screenshot](raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg) ![alt screenshot](raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg) ![alt screenshot](raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg) ![alt screenshot](raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg)
+![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg)
 
 Jeg valgte å løse dette i Kotlin kjørende på native Android.
 Grunnen til at jeg valgte å løse det i native Android er at oppgaven innebærer å jobbe med hardware på mobilen, kameraet. 
