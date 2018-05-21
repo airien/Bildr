@@ -106,7 +106,6 @@ class KameraHandterer(private val textureView: TextureView, private val kameraEv
             kameraHandterer.openCamera(kameraId, stateCallback, bakgrunnshandler)
             kameraLaas.release()
         } else kameraEventListener.onFeil(R.string.apneKameraFeil)
-        return
     }
     private fun apneKameraSesjon() {
         kameraLaas.acquire()
@@ -117,7 +116,6 @@ class KameraHandterer(private val textureView: TextureView, private val kameraEv
         } catch (e: CameraAccessException) {
             kameraLaas.release()
             e.printStackTrace()
-            return
         }
     }
     private fun startForhandsvisning() {
@@ -219,9 +217,7 @@ class KameraHandterer(private val textureView: TextureView, private val kameraEv
 
         kameraEventListener.transformOppdatert(matrix)
     }
-
     private fun setupKamera(width: Int, height: Int)  {
-
         try {
             for (cameraId in kameraHandterer.cameraIdList) {
                 val characteristics = kameraHandterer.getCameraCharacteristics(cameraId)
@@ -295,7 +291,6 @@ class KameraHandterer(private val textureView: TextureView, private val kameraEv
             // device this code runs.
             kameraEventListener.onFeil(e.message!!)
         }
-
     }
 
     companion object {
