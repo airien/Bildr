@@ -16,13 +16,17 @@ Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis al
 
 
 # Løsning
- 
-![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg = 250x) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg | width=100) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg | width=100) ![alt screenshot](https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg | width=100)
+<p>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg" width="200"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="200"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="200"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg" width="200"/>
+</p>
 
 Jeg valgte å løse dette i Kotlin kjørende på native Android.
 Grunnen til at jeg valgte å løse det i native Android er at oppgaven innebærer å jobbe med hardware på mobilen, kameraet. 
 
-Kamera er noe av det mest kompliserte man kan gjøre på mobil. Man må passe på at man ikke lukker kamera mens man åpner det, man kan ikke ta bilde når kameraet er lukket, man må følge med på hvilken retning mobilen holdes i, og aspekt ratio må tas hensyn til.
+Kamera er noe av det mer kompliserte man kan gjøre på mobil. Man må få tilgang til hardware, passe på at man ikke lukker kamera mens man åpner det, man kan ikke ta bilde når kameraet er lukket, man må følge med på hvilken retning mobilen holdes i, og aspekt ratio må tas hensyn til.
 Det involverer å få tilgang til systemressurser, og man må håndtere tilgang fra brukeren.
 
 Dette har vært prøvd før med mer eller mindre hell på kryssplattformrammeverk. Det er mulig, og det kan bli helt greit, men det vil være litt mer vondt å implementere og vanskeligere å vedlikeholde.
