@@ -16,7 +16,7 @@ Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis al
 
 
 # Løsning
-<p>
+<p align"center">
  <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg" width="210"/>
  <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="210"/>
  <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="210"/>
