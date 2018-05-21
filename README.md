@@ -53,6 +53,8 @@ Hadde jeg hatt mer tid, ville jeg gjort følgende:
 
 •	Stylet det litt mer, og gjort det litt mer shiny
 
+•	Laget flere tester
+
 
 
 
