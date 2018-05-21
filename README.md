@@ -17,10 +17,10 @@ Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis al
 
 # Løsning
 <p>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg" width="200"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="200"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="200"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg" width="200"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr5.jpg" width="210"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="210"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="210"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr4.jpg" width="210"/>
 </p>
 
 Jeg valgte å løse dette i Kotlin kjørende på native Android.
@@ -36,9 +36,11 @@ Kotlin ble valgt fordi det gir mye mer robust, og mindre kode. Det håndterer ti
 Det med å ikke bruke flere biblioteker enn nødvendig er et poeng hos politiet, da det er begrenset tilgang til eksterne repositories, og man ikke bare kan bruke alt man kommer over. Det skal være sikkert og det skal være helt nødvendig. 
 
 Det er veldig mange apputviklere som nå kun jobber med Kotlin på Android, på samme måte som mange nå jobber med Swift i stedet for Objective-C på iOS. Å jobbe opp kompetanse på dette er dermed smart.
-I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så man ekskluderer ikke Java hvis det er nødvendig. Man kan også bruke alle se samme bibliotekene.
+I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så man ekskluderer ikke Java hvis det er nødvendig. Man kan også bruke alle de samme bibliotekene.
 
 Hadde jeg hatt mer tid, ville jeg gjort følgende:
+
+•	Laget en finere bildeliste (android.support.v4.view.ViewPager)
 
 •	Implementert build variant for test,preprod,prod
 
