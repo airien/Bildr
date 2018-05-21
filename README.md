@@ -40,13 +40,16 @@ I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så m
 
 Hadde jeg hatt mer tid, ville jeg gjort følgende:
 
-•	Laget en finere bildeliste (android.support.v4.view.ViewPager)
-
-•	Implementert build variant for test,preprod,prod
+•	Vist thumbnails på kamerasiden etterhvert som bilder ble tatt
 
 •	Laget en wrappet versjon for SecureHub for å vise at det fungerer i politiets sikkerhetssystem
 
-•	Laget ferdig innlogging med faktisk request mot login server
+•	Laget ferdig innlogging
 
 •	Laget en versjon i Swift også
+
+•	Stylet det litt mer, og gjort det litt mer shiny
+
+
+
 
