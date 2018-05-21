@@ -40,6 +40,9 @@ I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så m
 
 Hadde jeg hatt mer tid, ville jeg gjort følgende:
 
+
+•	Implementert capture callbacks
+
 •	Vist thumbnails på kamerasiden etterhvert som bilder ble tatt
 
 •	Laget en wrappet versjon for SecureHub for å vise at det fungerer i politiets sikkerhetssystem
