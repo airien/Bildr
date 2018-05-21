@@ -11,12 +11,8 @@ import no.politiet.hanne.bildr.R
 import no.politiet.hanne.bildr.dependencyinjection.repository
 
 
-class BildePagerAdapter(private val mContext: Context, private val mResources: List<String>) : PagerAdapter() {
-    private val mLayoutInflater: LayoutInflater
-
-    init {
-        mLayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-    }
+class BildePagerAdapter(mContext: Context, private val mResources: List<String>) : PagerAdapter() {
+    private val mLayoutInflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getCount(): Int {
         return mResources.size
