@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_vis_bilder.*
 import no.politiet.hanne.bildr.cache.BildeCache
 import no.politiet.hanne.bildr.R
 import no.politiet.hanne.bildr.adapter.BildeListeAdapter
+import no.politiet.hanne.bildr.dependencyinjection.repository
 
 class VisBilderActivity : AppCompatActivity() {
 
@@ -17,13 +18,12 @@ class VisBilderActivity : AppCompatActivity() {
             onBackPressed()
         }
         val listView = ListView(this)
-        listView.adapter = BildeListeAdapter(this,BildeCache.getAllKeysFromCache())
+        listView.adapter = BildeListeAdapter(this, repository().bildeRepository.hentAlleBildeNokler())
         layout_bildeliste.addView(listView)
     }
 
     override fun onBackPressed() {
-        BildeCache.tomCache()
+        repository().bildeRepository.tomBilder()
         super.onBackPressed()
     }
-
 }

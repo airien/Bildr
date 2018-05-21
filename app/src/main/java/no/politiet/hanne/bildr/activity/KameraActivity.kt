@@ -17,6 +17,7 @@ import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.activity_kamera.*
 import no.politiet.hanne.bildr.R
 import no.politiet.hanne.bildr.cache.BildeCache
+import no.politiet.hanne.bildr.dependencyinjection.repository
 import no.politiet.hanne.bildr.kamera.KameraHandterer
 import no.politiet.hanne.bildr.kamera.KameraEventListener
 import org.jetbrains.anko.toast
@@ -27,9 +28,6 @@ private const val REQUEST_CAMERA_PERMISSION = 1888
 class KameraActivity : AppCompatActivity(), KameraEventListener {
 
     private var kameraHandterer : KameraHandterer? = null
-    init {
-        BildeCache.setupCache()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kamera)
@@ -64,7 +62,8 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         this@KameraActivity.runOnUiThread({
             val now : LocalDateTime = LocalDateTime.now()
             val formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS")
-            BildeCache.addBitmapToMemoryCache("bilde_"+now.format(formatter),kamera_soker.bitmap)
+
+            repository().bildeRepository.leggTilBilde("bilde_"+now.format(formatter),kamera_soker.bitmap)
 
             layout_bildevisning.visibility = RelativeLayout.VISIBLE
             kamera_soker.visibility = RelativeLayout.GONE
@@ -101,16 +100,16 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         startActivity(intent)
     }
     fun tellerOppdatert() {
-        if(BildeCache.teller == 3 && !this.isActivityTransitionRunning) {
+        if(repository().bildeRepository.tellBilder() == 3 && !this.isActivityTransitionRunning) {
             visBilder()
             return
         }
 
-        bildeteller.text = BildeCache.teller.toString()
-        if(BildeCache.teller == 0)
-            layout_bildeteller.visibility = FrameLayout.GONE
-        else
-            layout_bildeteller.visibility = FrameLayout.VISIBLE
+        bildeteller.text = repository().bildeRepository.tellBilder().toString()
+        when {
+            repository().bildeRepository.tellBilder() == 0 -> layout_bildeteller.visibility = FrameLayout.GONE
+            else -> layout_bildeteller.visibility = FrameLayout.VISIBLE
+        }
     }
 }
 

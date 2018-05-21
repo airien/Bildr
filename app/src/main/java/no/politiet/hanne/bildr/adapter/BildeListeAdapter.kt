@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import no.politiet.hanne.bildr.R
 import no.politiet.hanne.bildr.cache.BildeCache
+import no.politiet.hanne.bildr.dependencyinjection.repository
 
 class BildeListeAdapter(private val context: Activity, private val imageIdList: ArrayList<String>)
     : BaseAdapter() {
@@ -24,8 +25,7 @@ class BildeListeAdapter(private val context: Activity, private val imageIdList: 
         else {
             viewHolder = convertView!!.tag as ViewHolderItem
         }
-
-        viewHolder.view!!.setImageBitmap(BildeCache.getBitmapFromMemCache(imageIdList[p0]))
+        viewHolder.view!!.setImageBitmap(repository().bildeRepository.hentBilde(imageIdList[p0]))
         return convertView!!
     }
     override fun getItem(p0: Int): Any {

@@ -9,6 +9,8 @@ import junit.framework.Assert.assertTrue
 import kotlinx.android.synthetic.main.activity_kamera.*
 import no.politiet.hanne.bildr.activity.KameraActivity
 import no.politiet.hanne.bildr.cache.BildeCache
+import no.politiet.hanne.bildr.cache.BildeCache.teller
+import no.politiet.hanne.bildr.dependencyinjection.repository
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -45,11 +47,11 @@ class KameraActivityTest {
         val visbilde = activity.findViewById(R.id.layout_bildeteller) as View
 
         Assert.assertEquals(visbilde.visibility,RelativeLayout.GONE)
-        assertTrue(BildeCache.teller == 0)
+        assertTrue(repository().bildeRepository.tellBilder() == 0)
 
-        BildeCache.addBitmapToMemoryCache("test",bilde)
+        repository().bildeRepository.leggTilBilde("test",bilde)
         activity.tellerOppdatert()
         Assert.assertEquals(visbilde.visibility,RelativeLayout.VISIBLE)
-        assertTrue(BildeCache.teller > 0)
+        assertTrue(repository().bildeRepository.tellBilder() > 0)
     }
 }
