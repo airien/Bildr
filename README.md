@@ -17,10 +17,9 @@ Ekstra: Hvis du har god tid, se om du kan la appen ta tre bilder på rad. Vis al
 
 # Løsning
 <p align"center">
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="210"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="210"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bilde3.jpg" width="210"/>
- <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bilde4.jpg" width="210"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr1.jpg" width="250" style="margin:16px"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bildr2.jpg" width="250" style="margin:16px"/>
+ <img src="https://raw.githubusercontent.com/airien/Bildr/master/screenshots/bilde4.jpg" width="250" style="margin:16px"/>
 </p>
 
 Jeg valgte å løse dette i Kotlin kjørende på native Android.
