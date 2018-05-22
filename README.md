@@ -39,17 +39,6 @@ Det er veldig mange apputviklere som nå kun jobber med Kotlin på Android, på 
 I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så man ekskluderer ikke Java hvis det er nødvendig. Man kan også bruke alle de samme bibliotekene.
 
 
-Hadde jeg hatt mer tid, ville jeg gjort følgende:
-
-•	Laget en versjon i Swift også
-
-•	Implementert capture callbacks
-
-•	Laget en wrappet versjon for SecureHub for å vise at det fungerer i politiets sikkerhetssystem
-
-•	Laget ferdig innlogging
-
-•	Laget flere tester
 
 
 
