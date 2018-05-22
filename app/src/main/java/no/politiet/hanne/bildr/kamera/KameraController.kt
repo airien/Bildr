@@ -18,7 +18,7 @@ import java.util.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 
-class KameraHandterer(private val textureView: TextureView, private val kameraEventListener: KameraEventListener, activity : Activity) {
+class KameraController(private val textureView: TextureView, private val kameraEventListener: KameraEventListener, activity : Activity) {
     private var startet : Boolean = false
     private var kameraId: String? = null
     private var kameraSesjon: CameraCaptureSession? = null

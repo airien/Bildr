@@ -17,8 +17,8 @@ import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.activity_kamera.*
 import no.politiet.hanne.bildr.R
 import no.politiet.hanne.bildr.dependencyinjection.repository
+import no.politiet.hanne.bildr.kamera.KameraController
 import no.politiet.hanne.bildr.kamera.KameraEventListener
-import no.politiet.hanne.bildr.kamera.KameraHandterer
 import org.jetbrains.anko.toast
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -26,20 +26,20 @@ import java.time.format.DateTimeFormatter
 private const val REQUEST_CAMERA_PERMISSION = 1888
 class KameraActivity : AppCompatActivity(), KameraEventListener {
 
-    private var kameraHandterer : KameraHandterer? = null
+    private var kameraController : KameraController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kamera)
-        btn_tabilde.setOnClickListener {kameraHandterer!!.taBilde()}
+        btn_tabilde.setOnClickListener {kameraController!!.taBilde()}
         btn_visbilde.setOnClickListener { visBilder() }
         thumbnail.setOnClickListener { visBilder() }
         ActivityCompat.requestPermissions(this, arrayOf( Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
-        kameraHandterer = KameraHandterer(this.kamera_soker, this,this)
+        kameraController = KameraController(this.kamera_soker, this,this)
     }
     override fun onResume() {
         super.onResume()
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-            kameraHandterer!!.restartKamera(kamera_soker)
+            kameraController!!.restartKamera(kamera_soker)
             tellerOppdatert()
         }
     }
@@ -49,7 +49,7 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
     }
     override fun onStop() {
         super.onStop()
-        kameraHandterer!!.stopKamera()
+        kameraController!!.stopKamera()
     }
     override fun onFeil(message: Int) {
         onFeil(getString(message))
@@ -100,18 +100,20 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         startActivity(intent)
     }
     fun tellerOppdatert() {
-        if(repository().bildeRepository.tellBilder() == 3 && !this.isActivityTransitionRunning) {
+        val antall = repository().bildeRepository.tellBilder()
+        if(antall == 3 && !this.isActivityTransitionRunning) {
             visBilder()
             return
         }
-
-        bildeteller.text = repository().bildeRepository.tellBilder().toString()
-        if (repository().bildeRepository.tellBilder() == 0){
+        bildeteller.text = antall.toString()
+        oppdaterThumbnails()
+    }
+    private fun oppdaterThumbnails() {
+        if (repository().bildeRepository.tellBilder() == 0) {
             layout_bildeteller.visibility = FrameLayout.GONE
             thumbnail.visibility = RelativeLayout.GONE
             thumbnail.setImageBitmap(null)
-        }
-        else {
+        } else {
             layout_bildeteller.visibility = FrameLayout.VISIBLE
             thumbnail.visibility = RelativeLayout.VISIBLE
             thumbnail.setImageBitmap(repository().bildeRepository.hentSisteBilde())
