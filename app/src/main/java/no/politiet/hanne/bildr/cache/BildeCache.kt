@@ -3,13 +3,13 @@ package no.politiet.hanne.bildr.cache
 import android.graphics.Bitmap
 import android.util.LruCache
 
-object BildeCache {
+class BildeCache {
 
     private var bildeCache: LruCache<String, Bitmap>? = null
     private var keys : ArrayList<String> = ArrayList()
     val teller : Int get() = keys.count()
 
-    fun setupCache() {
+    init {
         val maxMem : Long = Runtime.getRuntime().maxMemory()/1024
         val cacheSize = maxMem /8
         bildeCache = object : LruCache<String, Bitmap>(cacheSize.toInt()) {
@@ -38,5 +38,9 @@ object BildeCache {
 
     fun getAllKeysFromCache() : ArrayList<String> {
         return keys
+    }
+
+    fun hentSisteBilde(): Bitmap {
+        return bildeCache!!.get(keys.get(keys.size-1))
     }
 }

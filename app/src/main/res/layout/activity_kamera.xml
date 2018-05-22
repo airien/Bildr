@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:backgroundTint="@color/colorBackground">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
 
     <LinearLayout
         android:id="@+id/layout_bildevisning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="16dp"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -20,50 +21,62 @@ android:layout_height="match_parent"
     </LinearLayout>
 
     <no.politiet.hanne.bildr.view.AutoFitTextureView
-    android:id="@+id/kamera_soker"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+        android:id="@+id/kamera_soker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="16dp" />
 
-<android.support.design.widget.FloatingActionButton
-    android:id="@+id/btn_tabilde"
-    android:layout_width="56dp"
-    android:layout_height="56dp"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_margin="@dimen/fab_margin"
-    app:srcCompat="@drawable/ic_camera"
-    app:backgroundTint="@color/colorPrimary" />
-
-    <FrameLayout
-        android:id="@+id/layout_bildeteller"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_tabilde"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        android:layout_margin="@dimen/fab_margin">
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_camera" />
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="115dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/layout_bildeteller"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="135dp"
+        android:layout_marginStart="115dp"
+        android:visibility="visible">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btn_visbilde"
             android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="24dp"
             app:backgroundTint="@color/colorSecondary" />
 
         <TextView
             android:id="@+id/bildeteller"
-            android:layout_width="56dp"
+            android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:elevation="24dp"
             android:fontFamily="sans-serif"
             android:text="0"
-            android:elevation="24dp"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textSize="12sp" />
     </FrameLayout>
 
 </RelativeLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture"
     android:fitsSystemWindows="true"
     tools:context=".activity.VisBilderActivity">
 
@@ -20,6 +21,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@color/colorPrimary"
+        app:elevation="16dp"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 

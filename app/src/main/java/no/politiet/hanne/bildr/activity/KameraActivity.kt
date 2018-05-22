@@ -16,10 +16,9 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.activity_kamera.*
 import no.politiet.hanne.bildr.R
-import no.politiet.hanne.bildr.cache.BildeCache
 import no.politiet.hanne.bildr.dependencyinjection.repository
-import no.politiet.hanne.bildr.kamera.KameraHandterer
 import no.politiet.hanne.bildr.kamera.KameraEventListener
+import no.politiet.hanne.bildr.kamera.KameraHandterer
 import org.jetbrains.anko.toast
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -33,7 +32,7 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         setContentView(R.layout.activity_kamera)
         btn_tabilde.setOnClickListener {kameraHandterer!!.taBilde()}
         btn_visbilde.setOnClickListener { visBilder() }
-
+        thumbnail.setOnClickListener { visBilder() }
         ActivityCompat.requestPermissions(this, arrayOf( Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
         kameraHandterer = KameraHandterer(this.kamera_soker, this,this)
     }
@@ -41,6 +40,7 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         super.onResume()
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             kameraHandterer!!.restartKamera(kamera_soker)
+            tellerOppdatert()
         }
     }
     override fun onStart() {
@@ -106,9 +106,15 @@ class KameraActivity : AppCompatActivity(), KameraEventListener {
         }
 
         bildeteller.text = repository().bildeRepository.tellBilder().toString()
-        when {
-            repository().bildeRepository.tellBilder() == 0 -> layout_bildeteller.visibility = FrameLayout.GONE
-            else -> layout_bildeteller.visibility = FrameLayout.VISIBLE
+        if (repository().bildeRepository.tellBilder() == 0){
+            layout_bildeteller.visibility = FrameLayout.GONE
+            thumbnail.visibility = RelativeLayout.GONE
+            thumbnail.setImageBitmap(null)
+        }
+        else {
+            layout_bildeteller.visibility = FrameLayout.VISIBLE
+            thumbnail.visibility = RelativeLayout.VISIBLE
+            thumbnail.setImageBitmap(repository().bildeRepository.hentSisteBilde())
         }
     }
 }

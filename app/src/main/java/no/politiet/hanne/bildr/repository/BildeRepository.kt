@@ -3,27 +3,28 @@ package no.politiet.hanne.bildr.repository
 import android.graphics.Bitmap
 import no.politiet.hanne.bildr.cache.BildeCache
 
-class BildeRepository {
-    init {
-        BildeCache.setupCache()
-    }
+class BildeRepository (private val bildeCache: BildeCache) {
     fun tellBilder() : Int {
-        return BildeCache.teller
+        return bildeCache.teller
     }
 
     fun leggTilBilde(key: String, bilde: Bitmap) {
-        BildeCache.addBitmapToMemoryCache(key,bilde)
+        bildeCache.addBitmapToMemoryCache(key,bilde)
     }
 
     fun tomBilder() {
-        BildeCache.tomCache()
+        bildeCache.tomCache()
     }
 
     fun hentAlleBildeNokler(): ArrayList<String> {
-        return BildeCache.getAllKeysFromCache()
+        return bildeCache.getAllKeysFromCache()
     }
 
     fun hentBilde(key: String): Bitmap? {
-        return BildeCache.getBitmapFromMemCache(key)
+        return bildeCache.getBitmapFromMemCache(key)
+    }
+
+    fun hentSisteBilde(): Bitmap {
+        return bildeCache.hentSisteBilde()
     }
 }
