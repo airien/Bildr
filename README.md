@@ -38,20 +38,16 @@ Det med å ikke bruke flere biblioteker enn nødvendig er et poeng hos politiet,
 Det er veldig mange apputviklere som nå kun jobber med Kotlin på Android, på samme måte som mange nå jobber med Swift i stedet for Objective-C på iOS. Å jobbe opp kompetanse på dette er dermed smart.
 I tillegg er det mulig å jobbe med både Java og Kotlin i samme prosjekt, så man ekskluderer ikke Java hvis det er nødvendig. Man kan også bruke alle de samme bibliotekene.
 
+
 Hadde jeg hatt mer tid, ville jeg gjort følgende:
 
+•	Laget en versjon i Swift også
 
 •	Implementert capture callbacks
-
-•	Vist thumbnails på kamerasiden etterhvert som bilder ble tatt
 
 •	Laget en wrappet versjon for SecureHub for å vise at det fungerer i politiets sikkerhetssystem
 
 •	Laget ferdig innlogging
-
-•	Laget en versjon i Swift også
-
-•	Stylet det litt mer, og gjort det litt mer shiny
 
 •	Laget flere tester
 
